@@ -1,0 +1,23 @@
+p { color : blue; font-size: large; font-weight: bold; }
+
+p strong {font-weight: normal;}
+
+li { text-align: center; }
+
+html { font-family: "Emilys Candy", serif; background-color: plum; }
+
+
+/* select all html tags that have a class highlight_01 */
+.highlight_01 {background-color: azure}
+
+.highlight_02 {background-color: pink}
+
+.highlight_03 {background-color: magenta;}
+
+#pink-small { width: 300px}
+#pink-medium { width: 400px}
+#pink-huge { width: 500px}
+
+.test-div { background: lemonchiffon; margin: 30px; padding: 40px }
+
+.my-flex { display: flex }
