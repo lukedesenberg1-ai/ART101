@@ -1,3 +1,70 @@
-html { font-family: "Emilys Candy", serif; background-color: cadetblue; }
- #deer {width: 300px;}
-#forest {width: 400px}
+html{
+    font-family: "Emilys Candy", serif;
+    background-color: cadetblue;
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+/* TITLE */
+
+h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+/* PARAGRAPHS */
+
+p{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* =========================
+   ENVIRONMENTAL ZONE
+========================= */
+
+#sky-zone{
+    height: 200px;
+    position: relative;
+}
+
+
+/* =========================
+   MAIN SCENE ZONE
+========================= */
+#main-zone{
+    display: flex;
+    gap: 40px;
+
+    border: 5px solid green;
+ }
+ #main-zone{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 40px;
+
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+/* MAIN CHARACTER */
+
+#deer{
+    width: 300px;
+    border-radius: 20px;
+}
+
+/* MAIN PROP */
+
+#forest{
+    width: 400px;
+    border-radius: 20px;
+}
