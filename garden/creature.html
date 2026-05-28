@@ -11,7 +11,10 @@
    <link rel="stylesheet" href="creature.css">
    <!-- jQuery library -->
    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
    <!-- Link to external JavaScript file -->
+   <script src="firebase.js" DEFER></script>
    <script src="creature.js" DEFER></script>
 
 </head>
@@ -24,9 +27,11 @@
 <!-- ADD CREATURES TO THE GARDEN -->
 
 <!-- adding creatures -->
-<div id="creature-form"> 
-    <div>Name: <input type=text id="crName"></div>
-     <div><button id="crAdd">Add Creature</button> </div>
+<div id="creature-form">
+    <div>Name: <input type="text" id="crName" placeholder="More than 2 symbols"> </div>
+    <div>Color: <input type="color" id="crColor"> </div>
+    <div>Number of Eyes: <input type="number" id="crEyesNum" max="5" min="0" value="1"> </div>
+    <div> <button id="crAdd">Add Creature</button> </div>
 </div>
 
 <!-- showing creatures -->
@@ -34,4 +39,4 @@
 
 </body>
 
-</html>
+</html> 
