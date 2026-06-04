@@ -1,112 +1,130 @@
-// VARIABLE
-let enviromentTitle = "The Mythical Forest";
+$(document).ready(function () {
 
-// ARRAY
-let forestCreatures = [
-    "Fairies",
-    "Trolls",
-    "Water Spirits",
-    "Satyr"
-];
+    // VARIABLES
+    let enviromentTitle = "The Mythical Forest";
 
-// OBJECT
-let mainEntity = {
-    name: "Luna",
-    type: "Young Doe",
-    mood: "Curious",
-    favoritePlace: "The Stream of Wonder"
-};
+    let forestCreatures = [
+        "Fairies",
+        "Trolls",
+        "Water Spirits",
+        "Satyr"
+    ];
 
-// VARIABLE
-let magicMessage = "The trees whisper secrets during the moonlight.";
+    let mainEntity = {
+        name: "Luna",
+        type: "Young Doe",
+        mood: "Curious",
+        favoritePlace: "The Stream of Wonder"
+    };
 
-// BUTTON 1
-$("#title-button").click(function () {
-    $("#environment-output").html(
-        "<h2>" + enviromentTitle + "</h2>"
-    );
-});
+    let magicMessage = "The trees whisper secrets during the moonlight.";
 
-// BUTTON 2
-$("#creatures-button").click(function () {
+    // BUTTON 1
+    $("#title-button").click(function () {
+        $("#environment-output").html(
+            "<h2>" + enviromentTitle + "</h2>"
+        );
+    });
 
-    let creatureText = "";
+    // BUTTON 2
+    $("#creatures-button").click(function () {
 
-    for (let i = 0; i < forestCreatures.length; i++) {
-        creatureText += "<p>" + forestCreatures[i] + "</p>";
+        let creatureText = "";
+
+        for (let i = 0; i < forestCreatures.length; i++) {
+            creatureText += "<p>" + forestCreatures[i] + "</p>";
+        }
+
+        $("#environment-output").html(creatureText);
+    });
+
+    // BUTTON 3
+    $("#deer-button").click(function () {
+
+        $("#environment-output").html(
+            "<h2>Main Entity</h2>" +
+            "<p>Name: " + mainEntity.name + "</p>" +
+            "<p>Type: " + mainEntity.type + "</p>" +
+            "<p>Mood: " + mainEntity.mood + "</p>" +
+            "<p>Favorite Place: " + mainEntity.favoritePlace + "</p>"
+        );
+    });
+
+    // BUTTON 4
+    $("#magic-button").click(function () {
+
+        $("html").toggleClass("magic");
+
+        $("#environment-output").html(
+            "<h2>Forest Magic</h2>" +
+            "<p>" + magicMessage + "</p>"
+        );
+    });
+
+    // BUTTON 5 (TIME CHANGE)
+    function changeTime(timeOfDay) {
+
+        if (timeOfDay === "day") {
+
+            $("html").css("background-color", "#87CEEB");
+            mainEntity.mood = "Happy";
+
+            $("#environment-output").html(
+                "<h2>Daytime in the Mythical Forest</h2>" +
+                "<p>Luna feels " + mainEntity.mood + " in the sunlight.</p>"
+            );
+
+        } else if (timeOfDay === "night") {
+
+            $("html").css("background-color", "#1d3557");
+            mainEntity.mood = "Mysterious";
+
+            $("#environment-output").html(
+                "<h2>Nighttime in the Mythical Forest</h2>" +
+                "<p>Luna feels " + mainEntity.mood + " under the moon.</p>"
+            );
+
+        } else {
+            $("#environment-output").html(
+                "<p>Please enter 'day' or 'night'.</p>"
+            );
+        }
     }
 
-    $("#environment-output").html(creatureText);
-});
+    $("#time-button").click(function () {
+        let userChoice = prompt("Enter day or night:");
+        changeTime(userChoice);
+    });
 
-// BUTTON 3
-$("#deer-button").click(function () {
-
-    $("#environment-output").html(
-
-        "<h2>Main Entity</h2>" +
-
-        "<p>Name: " + mainEntity.name + "</p>" +
-        "<p>Type: " + mainEntity.type + "</p>" +
-        "<p>Mood: " + mainEntity.mood + "</p>" +
-        "<p>Favorite Place: " + mainEntity.favoritePlace + "</p>"
-
-    );
-});
-
-// BUTTON 4
-$("#magic-button").click(function () {
-
-    $("#environment-output").html(
-
-        "<h2>Forest Magic</h2>" +
-
-        "<p>" + magicMessage + "</p>"
-
-    );
-});
-
-// FUNCTION WITH PARAMETER AND CONDITIONAL
-function changeTime(timeOfDay) {
-
-    if (timeOfDay === "day") {
-
-        $("html").css("background-color", "#87CEEB");
-
-        mainEntity.mood = "Happy";
+    // HOVER OVER DEER
+    $("#deer").mouseenter(function () {
 
         $("#environment-output").html(
-            "<h2>Daytime in the Mythical Forest</h2>" +
-            "<p>Luna feels " + mainEntity.mood +
-            " while exploring in the sunlight.</p>"
+            "<h2>Luna Notices You</h2>" +
+            "<p>The young doe looks up curiously.</p>"
         );
 
-    } else if (timeOfDay === "night") {
+        $("#deer").css("transform", "scale(1.1)");
+    });
 
-        $("html").css("background-color", "#1d3557");
-
-        mainEntity.mood = "Mysterious";
+    $("#deer").mouseleave(function () {
 
         $("#environment-output").html(
-            "<h2>Nighttime in the Mythical Forest</h2>" +
-            "<p>Luna feels " + mainEntity.mood +
-            " beneath the glowing moon.</p>"
+            "<p>Luna returns to exploring the forest.</p>"
         );
 
-    } else {
+        $("#deer").css("transform", "scale(1)");
+    });
+
+    // DOUBLE CLICK FOREST
+    $("#forest").dblclick(function () {
 
         $("#environment-output").html(
-            "<p>Please enter 'day' or 'night'.</p>"
+            "<h2>Hidden Secret Found!</h2>" +
+            "<p>A glowing fairy appears between the trees.</p>"
         );
 
-    }
-}
-
-// BUTTON 5
-$("#time-button").click(function () {
-
-    let userChoice = prompt("Enter day or night:");
-
-    changeTime(userChoice);
+        $("#forest").css("border", "5px solid gold");
+    });
 
 });

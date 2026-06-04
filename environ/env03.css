@@ -10,14 +10,12 @@ body {
 }
 
 /* TITLE */
-
 h1 {
     font-size: 50px;
     margin-top: 20px;
 }
 
 /* PARAGRAPHS */
-
 p {
     width: 75%;
     margin: auto;
@@ -27,7 +25,6 @@ p {
 }
 
 /* BUTTONS */
-
 button {
     margin: 10px;
     padding: 10px 15px;
@@ -36,17 +33,13 @@ button {
     cursor: pointer;
 }
 
-/* OUTPUT AREA */
-
+/* OUTPUT */
 #environment-output {
     margin: 25px auto;
     min-height: 100px;
 }
 
-/* =========================
-   MAIN SCENE ZONE
-========================= */
-
+/* MAIN ZONE */
 #main-zone {
     display: flex;
     justify-content: center;
@@ -57,16 +50,30 @@ button {
     padding-bottom: 60px;
 }
 
-/* MAIN CHARACTER */
-
+/* IMAGES */
 #deer {
     width: 300px;
     border-radius: 20px;
+    transition: transform 0.5s;
 }
-
-/* MAIN PROP */
 
 #forest {
     width: 400px;
     border-radius: 20px;
+}
+
+/* MAGIC MODE */
+.magic {
+    background-color: darkslateblue;
+    transition: 1s;
+}
+
+/* NIGHT MODE */
+.night {
+    filter: brightness(50%);
+}
+
+/* DEER GLOW */
+.glow {
+    box-shadow: 0 0 30px gold;
 }
